@@ -1,0 +1,13 @@
+.CheckersBoardRow {
+  display: flex;
+}
+.CheckersBoardRow:nth-child(even) .CheckersBoardSquare:nth-child(even),
+.CheckersBoardRow:nth-child(odd) .CheckersBoardSquare:nth-child(odd){
+  background: black;
+  color: white;
+}
+.CheckersBoardRow:nth-child(even) .CheckersBoardSquare:nth-child(odd),
+.CheckersBoardRow:nth-child(odd) .CheckersBoardSquare:nth-child(even){
+  background: white;
+  color: black;
+}
