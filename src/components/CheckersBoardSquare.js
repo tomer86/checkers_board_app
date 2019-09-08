@@ -3,11 +3,11 @@ import CheckersSoldier from './CheckersSoldier';
 
 class CheckersBoardSquare extends Component {
   render() {
-    const {hasSoldier} = this.props.square;
+    const { hasSoldier } = this.props.square;
     const soldier = (<CheckersSoldier/>);
     return (
-        <div className="CheckersBoardSquare" style={squareStyle}>
-          {hasSoldier ? soldier: ''}
+        <div className="CheckersBoardSquare" style={ squareStyle }>
+          { hasSoldier ? soldier: '' }
         </div>
     );
   }

@@ -12,13 +12,13 @@ class App extends Component {
     this.onAddSoldier.bind(this);
     this.onRemoveSoldier.bind(this);
   }
-  onAddSoldier({row,col}) {
-    this.toggoleSoldier({row, col, hasSoldier: true});
+  onAddSoldier({ row,col }) {
+    this.toggoleSoldier({ row, col, hasSoldier: true });
   }
-  onRemoveSoldier({row,col}) {
-    this.toggoleSoldier({row, col, hasSoldier: false});
+  onRemoveSoldier({ row,col }) {
+    this.toggoleSoldier({ row, col, hasSoldier: false });
   }
-  toggoleSoldier({row, col, hasSoldier}) {
+  toggoleSoldier({ row, col, hasSoldier }) {
     if (row !== null && col !== null && row < BOARD_SIZE && col < BOARD_SIZE) {
       const { squares } = this.state;
       const index = (row * BOARD_SIZE) + col;
@@ -36,9 +36,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CheckersForm onAddSoldier={this.onAddSoldier.bind(this)}
-                      onRemoveSoldier={this.onRemoveSoldier.bind(this)}/>
-        <CheckersBoard squares={this.state.squares}/>
+        <CheckersForm onAddSoldier={ this.onAddSoldier.bind(this) }
+                      onRemoveSoldier={ this.onRemoveSoldier.bind(this) }/>
+        <CheckersBoard squares={ this.state.squares }/>
       </div>
     );
   }

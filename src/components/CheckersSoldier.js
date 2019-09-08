@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CheckersSoldier extends Component {
   render() {
     return (
-        <div className="Soldier" style={soldiereStyle}></div>
+        <div className="Soldier" style={ soldiereStyle }></div>
     );
   }
 }

@@ -5,29 +5,28 @@ import CheckersBoardRow from './CheckersBoardRow/CheckersBoardRow'
 
 class CheckersBoard extends Component {
   render() {
-    let tempRow = [];
     const rows = [];
+    let tempRowContent = [];
     this.props.squares.forEach((square, index) => {
-      const squareTemplate = (
-        <CheckersBoardSquare square={square} key={index}/>
-      );
-      tempRow.push(squareTemplate);
-      const nextIndex = index + 1;     
-      if (nextIndex % BOARD_SIZE === 0) {
-        const rowTemplate = (
-          <CheckersBoardRow items={ tempRow }/>
-        );
-        rows.push(rowTemplate);
-        tempRow = [];
+      tempRowContent.push((
+        <CheckersBoardSquare square={ square }/>
+      ));
+      const isLastSquareInRow = (index + 1) % BOARD_SIZE === 0 
+      if (isLastSquareInRow) {
+        rows.push((
+          <CheckersBoardRow rowContent={ tempRowContent }/>
+        ));
+        tempRowContent = [];
       }
     });
     return (
       <div className="CheckersBoard"> 
         <h1>Checkers Board</h1>
-        <div className="Board" style={boardStyle}>
+        <div className="Board" style={ boardStyle }>
           { rows }
-        </div> 
-      </div>);
+        </div>
+      </div>
+    );
   }
 }
 
